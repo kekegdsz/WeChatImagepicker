@@ -1,0 +1,7 @@
+ext {
+    cfgs = [
+            glide                : "4.5.0",
+            rxjava               : "2.0.5",
+            rxandroid            : "2.0.1"
+    ]
+}

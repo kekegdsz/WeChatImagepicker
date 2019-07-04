@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ImagePicker</string>
+
+    <string name="image_camera_roll">相机胶卷</string>
+    <string name="image_all_audio">所有音频</string>
+    <string name="image_empty">你可以使用相机拍摄照片或视频</string>
+    <string name="image_error">图片已损坏</string>
+    <string name="image_video_error">视频已损坏</string>
+    <string name="image_audio_error">音频已损坏</string>
+</resources>
