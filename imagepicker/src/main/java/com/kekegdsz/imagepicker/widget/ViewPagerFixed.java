@@ -1,6 +1,8 @@
 package com.kekegdsz.imagepicker.widget;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.viewpager.widget.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -33,5 +35,10 @@ public class ViewPagerFixed extends ViewPager {
             ex.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public void addOnPageChangeListener(@NonNull OnPageChangeListener listener) {
+        super.addOnPageChangeListener(listener);
     }
 }

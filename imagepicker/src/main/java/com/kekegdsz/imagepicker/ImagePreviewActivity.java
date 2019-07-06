@@ -1,5 +1,6 @@
 package com.kekegdsz.imagepicker;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
+import androidx.viewpager.widget.ViewPager;
+
+import com.kekegdsz.imagepicker.config.ImageMimeType;
 import com.kekegdsz.imagepicker.entity.LocalMedia;
 import com.kekegdsz.imagepicker.widget.SuperCheckBox;
 
@@ -25,11 +29,12 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity {
     private Button mBtnOk;                         //确认图片的选择
     private View bottomBar;
 
-    public static void start(Context context, ArrayList<LocalMedia> images, int position) {
+    public static void start(Activity context, ArrayList<LocalMedia> images, int position) {
         Intent intent = new Intent(context, ImagePreviewActivity.class);
         intent.putExtra(EXTRA_SELECTED_IMAGE_POSITION, position);
         intent.putExtra(EXTRA_IMAGE_ITEMS, images);
         context.startActivity(intent);
+        context.overridePendingTransition(R.anim.a5, 0);
     }
 
     @Override
@@ -43,7 +48,6 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity {
         bottomBar.setVisibility(View.VISIBLE);
         mCbCheck = (SuperCheckBox) findViewById(R.id.cb_check);
         mCbOrigin = (SuperCheckBox) findViewById(R.id.cb_origin);
-        LocalMedia item = mImageItems.get(mCurrentPosition);
 
     }
 
@@ -73,4 +77,6 @@ public class ImagePreviewActivity extends ImagePreviewBaseActivity {
                 content.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
     }
+
+
 }

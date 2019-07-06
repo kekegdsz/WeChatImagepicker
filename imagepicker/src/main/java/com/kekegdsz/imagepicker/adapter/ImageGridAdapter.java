@@ -95,13 +95,6 @@ public class ImageGridAdapter extends BaseRecyclerAdapter<LocalMedia, ImageGridA
             }
         });
 
-        holder.contentView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ImagePreviewActivity.start(mContext, (ArrayList<LocalMedia>) mData, holder.getAdapterPosition());
-            }
-        });
-
     }
 
     public boolean isSelected(LocalMedia image) {

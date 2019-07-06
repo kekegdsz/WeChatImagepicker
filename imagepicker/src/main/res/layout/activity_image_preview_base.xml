@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ImagePreviewBaseActivity">
 
@@ -49,5 +49,13 @@
             android:text="选择"
             android:textColor="#ffffff" />
     </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="60dp"
+        android:visibility="visible"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/icon_play" />
 
 </RelativeLayout>

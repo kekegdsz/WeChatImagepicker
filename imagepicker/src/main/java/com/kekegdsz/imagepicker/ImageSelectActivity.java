@@ -31,7 +31,7 @@ import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_DRAGGING;
 import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_IDLE;
 import static androidx.recyclerview.widget.RecyclerView.SCROLL_STATE_SETTLING;
 
-public class ImageSelectActivity extends ImageBaseActivity  {
+public class ImageSelectActivity extends ImageBaseActivity implements BaseRecyclerAdapter.OnItemClickListener<LocalMedia> {
 
     private TextView tv_empty;
     private RecyclerView image_recycler;
@@ -114,6 +114,8 @@ public class ImageSelectActivity extends ImageBaseActivity  {
                 super.onScrolled(recyclerView, dx, dy);
             }
         });
+
+        adapter.setOnItemClickListener(this);
     }
 
     protected void readLocalMedia() {
@@ -142,4 +144,8 @@ public class ImageSelectActivity extends ImageBaseActivity  {
     }
 
 
+    @Override
+    public void onItemClick(View view, int position, LocalMedia data) {
+        ImagePreviewActivity.start(this, (ArrayList<LocalMedia>) images, position);
+    }
 }

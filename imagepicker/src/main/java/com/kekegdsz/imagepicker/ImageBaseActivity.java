@@ -48,4 +48,10 @@ public class ImageBaseActivity extends AppCompatActivity {
     public void showToast(String toastText) {
         Toast.makeText(getApplicationContext(), toastText, Toast.LENGTH_SHORT).show();
     }
+
+    protected void closeActivity() {
+        finish();
+        overridePendingTransition(0, R.anim.a3);
+
+    }
 }
