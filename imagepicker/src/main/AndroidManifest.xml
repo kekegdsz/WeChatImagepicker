@@ -14,7 +14,16 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application>
-        <activity android:name="com.kekegdsz.imagepicker.ImageSelectActivity"></activity>
+
+        <activity
+            android:name=".ImageSelectActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerTheme" />
+
+        <activity
+            android:name=".ImagePreviewActivity"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/ImagePickerThemeFullScreen" />
     </application>
 
 </manifest>

@@ -11,4 +11,5 @@
     <string name="image_audio_error">音频已损坏</string>
     <string name="image_empty_title">无视频或照片\n</string>
     <string name="image_empty_audio_title">无音频文件\n</string>
+    <string name="preview_image_count">%1$s/%2$s</string>
 </resources>

@@ -4,7 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-public class LocalMedia implements Parcelable {
+import java.io.Serializable;
+
+public class LocalMedia implements Parcelable, Serializable {
     private String path;
     private String compressPath;
     private String cutPath;

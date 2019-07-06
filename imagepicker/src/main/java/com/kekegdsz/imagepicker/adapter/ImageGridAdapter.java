@@ -3,9 +3,9 @@ package com.kekegdsz.imagepicker.adapter;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.support.v4.content.ContextCompat;
-import android.text.TextUtils;
+
+import androidx.core.content.ContextCompat;
+
 import android.view.View;
 import android.view.animation.Animation;
 import android.widget.ImageView;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.kekegdsz.imagepicker.ImagePreviewActivity;
 import com.kekegdsz.imagepicker.R;
 import com.kekegdsz.imagepicker.anim.OptAnimationLoader;
 import com.kekegdsz.imagepicker.config.ImageConfig;
@@ -91,6 +92,13 @@ public class ImageGridAdapter extends BaseRecyclerAdapter<LocalMedia, ImageGridA
                     return;
                 }
                 changeCheckboxState(holder, localMedia);
+            }
+        });
+
+        holder.contentView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ImagePreviewActivity.start(mContext, (ArrayList<LocalMedia>) mData, holder.getAdapterPosition());
             }
         });
 

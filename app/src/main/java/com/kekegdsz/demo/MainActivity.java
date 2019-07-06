@@ -1,7 +1,6 @@
 package com.kekegdsz.demo;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
@@ -17,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_image_picker).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ImageSelectActivity.class));
+               ImageSelectActivity.start(MainActivity.this);
             }
         });
     }
